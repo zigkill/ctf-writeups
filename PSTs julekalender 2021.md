@@ -54,6 +54,8 @@ Jeg testet først å se på bit planes i RGB, deretter strings i ulike verktøy 
 
 Huskelappen så ut til å inneholde koordinater, og jeg importerte disse på Google Maps. Punktene viste flagget direkte.
 
+Flagg: `PST{MANGE SNILLE BARN I VERDEN}`
+
 >Selvfølgelig, det gir mening! Jaja, det visste han jo allerede.
 
 ## Mistenkelig julekort (3. desember 18.00)
@@ -154,7 +156,7 @@ og
 >Mellomleder
 
 Fram til den siste meldingen var jeg ikke i nærheten av noe som helst, men der kom det fram både at det finnes et passord (åpenbart `julenissenerteit`) og en algoritme (fra store bokstaver i meldingen, `AES`).
-Jeg la inn recipe From Base64->AES Decrypt (med passordet) i [CyberChef](https://gchq.github.io/CyberChef/) og fikk ut meldingen `NPST skal endre paa pakkefordelingsruta i aar. Det gir mulighet for aa sabotere. XOXO M. PS Ikke god jul. PS pst{nootnoot}`.
+Jeg la inn recipe From Base64->AES Decrypt (med passordet) i [CyberChef](https://gchq.github.io/CyberChef/) og fikk ut meldingen «NPST skal endre paa pakkefordelingsruta i aar. Det gir mulighet for aa sabotere. XOXO M. PS Ikke god jul. PS pst{nootnoot}».
 
 Flagg: `pst{nootnoot}`
 
@@ -183,7 +185,9 @@ Flagg: `PST{R3m3mb3r_m3?_W3_h4d_SO_MUCH_FUN_t0g3th3r!_:D}`
 >Mellomleder
 
 Også på denne måtte jeg få hjelp en annen deltaker. Jeg trodde jeg skulle bruke bildene til å få fram en QR-kode som kanskje skulle sende meg videre til Slede 8, men jeg fikk hint om å se etter s8-koden og gå videre med den først. Dessuten rotet jeg mye med input og operasjoner i CyberChef og brukte blant annet feil data som input. Jeg trodde jeg kunne bruke View Bit Plane (Blue 0) på `frimerke.png`.
-Jeg brukte også mye tid på først å forsøke tolke s8-koden, i stedet for å bare legge den inn direkte. Jeg fikk også problemer med kjøretiden og måtte øke antall sykler via `localStorage.setItem("🚲", <ønsket grense>)` (settes i console i browser).
+Jeg brukte også mye tid på først å forsøke tolke s8-koden, i stedet for å bare legge den inn direkte. Dessuten fikk jeg problemer med kjøretiden og måtte øke antall sykler via `localStorage.setItem("🚲", <ønsket grense>)` (settes i console i browser).
+
+Oppgaven må ha vært veldig vanskelig for de som evt. ikke deltok i 2020, da Slede 8 ble brukt i stadig mer krevende oppgaver.
 
 ## Nettverkstrafikk (9. desember 18.00)
 
@@ -201,7 +205,7 @@ Flagg: `pst{jegsnakkermeddegfrastue}`
 
 > Oj, det var spennende. Takk for hjelpen zigkill!
 
-Jeg visste ikke om Tap code før etter at jeg hadde løst oppgaven, det var dataene som tydet på at det var mulighet for å oversette til tekst, og etter litt testing kom jeg fram til koden.
+Jeg visste ikke om Tap code før etter at jeg hadde løst oppgaven, det var dataene som tydet på at det var mulighet for å oversette til tekst, og etter litt testing kom jeg fram til koden selv.
 
 ## Oppdatering av varelageret (10. desember 18.00)
 
@@ -246,9 +250,9 @@ Den første delen av oppgaven gikk ganske greit, men jeg brukte litt tid på å 
 ## Ugler i grøten (12. desember 18.00)
 
 >God søndag! Det er fanget opp tO krypterte meldinger som ble sendt under lunsjgrøTen i dag. Det vekker mistanke, siden alle alvebetjenter elsker grøt og aldri vil gå gliPp av en lunsjgrøt. Se de krypterte meldingene nederst i mailen. En dyktig alvebetjent har allerede funnet noen biter av klarteksten til melding 1:
->
+>```
 >"- - - k r o e l l - - - - - - - - - - - - - - - - - - - - - - - k r o e l l - - - - - - - -"
->
+>```
 >og noen biter av klarteksten til melding 2:
 >
 >"- - - - - - - - - - - - - - - - p e n g w y n - - a - - o l - n - - - - - - - - - - - - - -"
@@ -440,8 +444,7 @@ Den vesentlige delen av koden var disse linjene fra Chopper (server):
 ```
         try {
             
-                $Encrypted_Flag = "76492d1116743f0423413b16050a5345MgB8AGUAbwBRAEwAWQB1ADIARQB5AEEAZgB2AHIAWAB4ADQAdgA5AHIAQwBZAEEAPQA9AHwANQAxAGUAZQAxAGUAMABhADUAOAAwADMAZgBlADkAZQA3ADMANQA4AGIAZAAzADAAYQA5ADYANQA4ADMAZABhAGEAOABmADgANQAxADAANAAwADMAMwA5ADk
-                AYQA4AGIAMABkAGQAMgA0ADIANgAyAGEAZgBkADUAZgBjADAAZQBhADAAMAAxADkAZQA0ADMAMwBkADIAMQA5ADIAMgA0ADcAMgA2AGUANABlAGQAYQBkAGYAYQA3ADQANAA5ADgA"
+                $Encrypted_Flag = "76492d..."
 
                 $key = [byte[]]($addressLookup[0..15] -join "").ToCharArray()
                 $ss = ConvertTo-SecureString -String $Encrypted_Flag -Key $key
@@ -453,7 +456,7 @@ Den vesentlige delen av koden var disse linjene fra Chopper (server):
         }
 ```
 
-Jeg endret først en test i klienten slik at skriptet ikke avsluttet og deretter la jeg inn en loop i server som testet alle muligheter (tall) i addressLookup i stedet for den adressen som ble sendt fra klient:
+Jeg endret først en test i klienten slik at skriptet ikke avsluttet og deretter la jeg inn en loop i server som testet alle muligheter (tall) i addressLookup i stedet for den adressen (pid) som ble sendt fra klient:
 ```
         $i = 0
         while($i -lt 65536) {
@@ -501,8 +504,6 @@ I den første kjøringen av server og klient kom det en feilmelding (som står k
 >Mellomleder
 
 Hviledag. Det ble varslet på Discord om at noen hadde satt opp en cryptobins-klone for å fiske flagg. Jeg har sett på noen av løsningene som har blitt postet, men tror ikke jeg har vært utsatt for dette.
-
-At noen finner glede av å jukse i et spill er ganske uforståelig for meg.
 
 ## Ukens ansatt! (20. desember 18.00)
 
@@ -612,8 +613,10 @@ Flagg: `PST{EGG_StRpiITbqyEsBJM}`
 >
 >- Juleharen 🐣
 
-## Verktøy
-
 ## Hjelp
 
 Jeg klarte oppgavene 1., 2., 5., 7., 9., 10., 11., 12., 14., 16., 18., 19., 20., 21., 22. og 23. desember og eggene fra 10. og 23. desember uten hint fra andre. På noen av de andre oppgavene var jeg veldig nære løsningen på egenhånd (og hadde delvis rotet meg bort), mens jeg også på noen fikk gode hint som ledet meg til riktig løsning.
+
+## Oppsummering
+
+Dette er den fjerde CTF-en til PST jeg har forsøkt meg på. Den første var påsken 2020, deretter advent 2020 og påske 2021. I hovedsak er oppgavene underholdende og passe vanskelige. I noen tilfeller er det litt vanskelig å finne riktig tilnærming og det er lett å gå seg bort i irrelevant informasjon.
