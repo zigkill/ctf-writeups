@@ -28,15 +28,16 @@ Jeg tror ikke det var noe poeng å hente fra denne meldingen.
 >
 >📎eksempel_bakgrunnsbilde.png
 
+![eksempel_bakgrunnsbilde.png](/assets/images/eksempel_bakgrunnsbilde.png)
+
 Jeg lastet opp bildet [her](https://stegonline.georgeom.net/extract) og tok extract av RGB i Layer 0, der flagget lå.
 
 Flagg: `PST{HelloDASS}==`
 
 >Bra jobba zigkill! Mellomleder tar kontakt med deg i morgen med mer konkret informasjon angående hva du skal jobbe med.
 
-Jeg testet først å se på bit planes i RGB, deretter strings i ulike verktøy og det var litt tilfeldig at jeg fant flagget. En bedre tilnærming hadde vært
-
-    `zsteg -a eksempel_bakgrunnsbilde.png | grep -i pst{`.
+Jeg testet først å se på bit planes i RGB, deretter strings i ulike verktøy og det var litt tilfeldig at jeg fant flagget. En bedre tilnærming hadde vært å bruke zsteg.
+    zsteg -a eksempel_bakgrunnsbilde.png | grep -i pst{
 
 ## Huskelapp (2. desember 18.00)
 
