@@ -1,6 +1,6 @@
 # PSTs julekalender 2021
 
-PSTs julekalender for 2021 brukte [DASS](https://dass.p26e.dev/), som er samme adresse som for 2020. I *DASS* kommer oppgavene i et slags e-post-program kalt *Snabel-A*.
+PSTs julekalender for 2021 brukte [DASS](https://dass.p26e.dev/), som var samme adresse som for 2020. I *DASS* kommer oppgavene i et slags e-post-program kalt *Snabel-A*.
 
 ## Velkommen! (1. desember 08.00)
 
@@ -71,15 +71,14 @@ Flagg: `PST{MANGE SNILLE BARN I VERDEN}`
 ![julekort_baksiden.jpg](/assets/images/npst-2021/julekort_baksiden.jpg)
 ![julekort_framsiden.jpg](/assets/images/npst-2021/julekort_framsiden.jpg)
 
-Begge sidene av julekortet inneholdt symboler som jeg fant ut kalles [Pigpen Cipher](https://en.wikipedia.org/wiki/Pigpen_cipher). Forsiden hadde fire symboler som stavet ut «PILA» mot klokken. Baksiden av kortet måtte snus opp ned for at cipheret skulle gi mening.
+Begge sidene av julekortet inneholdt symboler som jeg fant ut kalles [Pigpen Cipher](https://en.wikipedia.org/wiki/Pigpen_cipher). Forsiden hadde fire symboler som kanskje stavet ut «PILA» mot klokken. Baksiden av kortet måtte snus opp ned for at cipheret skulle gi mening.
 
 Flagg: `pst{julenissenerteit}`
 
 >Vel vel. Tilsynelatende ikke noe muffens her, så julekortet blir sendt videre til Antarktis.
 
-Jeg klarte ikke denne oppgaven helt uten hjelp. Jeg kom fram til cipheret, men skjønte ikke hintet fra forsiden og forsøkte finne en måte å ordne bokstavene på eller bruke varianter av cipheret.
-
-En annen deltaker ga meg hint om at «noe må gjøres med tekstsiden» og det var tilstrekkelig.
+Jeg klarte ikke denne oppgaven helt uten hjelp. Jeg kom fram til cipheret, men skjønte ikke hintet fra forsiden og forsøkte forgjeves å finne en måte å ordne bokstavene på eller bruke varianter av cipheret som kunne gi mer mening.  
+En annen deltaker ga meg hint om at «noe må gjøres med tekstsiden» og det var tilstrekkelig. Det slo meg at en mottaker på Sydpolen ville lese kortet opp-ned.
 
 ## Krøll på verkstedet (4. desember 18.00)
 
@@ -131,7 +130,7 @@ Flagg: `PST{5Q1_1nj€Ⓒt10n}`
 >
 >Takk for godt samarbeid, vi ser frem til fortsettelsen.
 
-Hviledag. Jeg tror ikke det var noe poeng å hente fra denne meldingen.
+Hviledag.
 
 ## Kryptert melding (7. desember 18.00)
 
@@ -147,7 +146,7 @@ Hviledag. Jeg tror ikke det var noe poeng å hente fra denne meldingen.
 >
 >Mellomleder
 
-Denne viste seg kanskje å være ekstra vanskelig, og oppgaven fikk to oppdateringer (20.00 og 21.45):
+Denne viste seg kanskje å være ekstra vanskelig, og oppgaven fikk to oppdateringer samme kveld (20.00 og 21.45):
 
 >Etterretningsalvdelingen informerer om at mottaker av den krypterte meldingen heter Chili Willy. Kanskje det kan være til hjelp for å dekryptere meldingen?
 >
@@ -159,8 +158,8 @@ og
 >
 >Mellomleder
 
-Fram til den siste meldingen var jeg ikke i nærheten av noe som helst, men der kom det fram både at det finnes et passord (åpenbart `julenissenerteit`) og en algoritme (fra store bokstaver i meldingen, `AES`).
-Jeg la inn recipe From Base64->AES Decrypt (med passordet) i [CyberChef](https://gchq.github.io/CyberChef/) og fikk ut meldingen «NPST skal endre paa pakkefordelingsruta i aar. Det gir mulighet for aa sabotere. XOXO M. PS Ikke god jul. PS pst{nootnoot}».
+Fram til den siste meldingen var jeg ikke i nærheten av noe som helst, men der kom det fram både at det finnes et passord (det måtte være `julenissenerteit`) og en algoritme (fra store bokstaver i meldingen, `AES`).
+Jeg la inn oppskrift From Base64->AES Decrypt (med passordet) i [CyberChef](https://gchq.github.io/CyberChef/) og fikk ut meldingen «NPST skal endre paa pakkefordelingsruta i aar. Det gir mulighet for aa sabotere. XOXO M. PS Ikke god jul. PS pst{nootnoot}».
 
 Flagg: `pst{nootnoot}`
 
@@ -203,13 +202,13 @@ Oppgaven må ha vært veldig vanskelig for de som evt. ikke deltok i 2020, da Sl
 >
 >📎npst_02_12_21_18_00.pcap
 
-Jeg brukte Wireshark og tcpdump til å se på trafikken, som kun var TCP. De store bokstavene `TAP` viser til [Tap code](https://en.wikipedia.org/wiki/Tap_code) og payload i trafikken kan dekodes. Her var det mange repeterende meldinger mellom parter, men en melding skilte seg ut, `PST{F'JEG SNACCER MED DEG FRA {SOURCEIP}'}`. Source på denne meldingen var `43.44.45.15`, som etter koden parser til `stue`.
+Jeg brukte Wireshark og tcpdump til å se på trafikken, som kun var TCP. De store bokstavene `TAP` viser til [Tap code](https://en.wikipedia.org/wiki/Tap_code) og payload i trafikken kunne dekodes. Her var det mange repeterende meldinger mellom parter, men en melding skilte seg ut, `PST{F'JEG SNACCER MED DEG FRA {SOURCEIP}'}`. Source på denne meldingen var `43.44.45.15`, som etter koden parser til `stue`.
 
 Flagg: `pst{jegsnakkermeddegfrastue}`
 
 > Oj, det var spennende. Takk for hjelpen zigkill!
 
-Jeg visste ikke om Tap code før etter at jeg hadde løst oppgaven, det var dataene som tydet på at det var mulighet for å oversette til tekst, og etter litt testing kom jeg fram til koden selv.
+Jeg visste ikke om Tap code før etter at jeg hadde løst oppgaven, det var dataene som tydet på at det var mulighet for å oversette til tekst, og etter litt testing kom jeg fram til koden. Det var ikke opplagt at sourceip også skulle oversettes.
 
 ## Oppdatering av varelageret (10. desember 18.00)
 
@@ -243,7 +242,7 @@ På denne oppgaven brukte jeg en del tid på å se etter data som skulle peke se
 >
 >📎sikring.tar.gz
 
-Filen inneholdt et JFFS2-image, og jeg mountet opp dette ved hjelp av informasjonen [her](https://github.com/Dvd848/CTFs/blob/master/2018_35C3_Junior/rare_mount.md). Etter mount fant jeg noen bildefiler og en `flag.txt`, men det var ikke flagget. En `.sys` inneholdt et CramFS-system som jeg fikk pakket ut med `fsck.cramfs --extract=this .sys` og der var det nok en bildefil. Den inneholdt teksten `CFG{WhyrYnzn}` som jeg brukte rot13 på.
+Filen inneholdt et JFFS2-image, og jeg mountet opp dette ved hjelp av informasjonen [her](https://github.com/Dvd848/CTFs/blob/master/2018_35C3_Junior/rare_mount.md). Etter mount fant jeg flere bildefiler og en `flag.txt`, men det var ikke flagget. En `.sys` inneholdt et CramFS-system som jeg fikk pakket ut med `fsck.cramfs --extract=this .sys` og der var det nok en bildefil. Den inneholdt teksten `CFG{WhyrYnzn}` som jeg brukte rot13 på.
 
 Flagg: `PST{JuleLama}`
 
@@ -273,7 +272,7 @@ Den første delen av oppgaven gikk ganske greit, men jeg brukte litt tid på å 
 >```
 >📎 ascii.pdf
 
-Meldingsteksten inneholder OTP i store bokstaver, og jeg antok at det viste til [One-time pad](https://en.wikipedia.org/wiki/One-time_pad), som er sårbare dersom samme kode brukes flere ganger. Her skal det være mulig å benytte noe som heter Crib Drag (e.g., [denne](https://toolbox.lotusfa.com/crib_drag/)), men jeg løste den for hånd, noe som tok litt tid. Den første meldingen er `pstkroellparentesberlinerkranserkroellparentes` og den andre `skalgibeskjedfrapengwynomatsolenskinnerimorgen`.
+Meldingsteksten inneholdt OTP i store bokstaver, og jeg antok at det viste til [One-time pad](https://en.wikipedia.org/wiki/One-time_pad), som er sårbare dersom samme kode brukes flere ganger. Her skulle det være mulig å benytte noe som heter Crib Drag (e.g., [denne](https://toolbox.lotusfa.com/crib_drag/)), men jeg løste den for hånd, noe som tok litt tid. Den første meldingen var `pstkroellparentesberlinerkranserkroellparentes` og den andre `skalgibeskjedfrapengwynomatsolenskinnerimorgen`.
 
 Flagg: `pst{berlinerkranser}`
 
@@ -295,7 +294,7 @@ Flagg: `pst{berlinerkranser}`
 >
 >Rapporter tilbake innhentet informasjon om aktørens planer mot norske mål, dersom du finner noe.
 
-Hviledag. Fra meldingen hintes det sterkt om at det finnes et ekstra flagg på Cybertalent, men oppgavene der har jeg bare løst noen få av. Det ble også bekreftet på Discord at flere har fått flagget etter å ha gjennomført oppgaven.
+Hviledag. Fra meldingen hintes det sterkt om at det finnes et ekstra flagg på [Cybertalent](ctf.cybertalent.no), men oppgavene der har jeg bare løst noen få av de innledende av. Det ble også bekreftet på Discord at flere har fått flagget etter å ha gjennomført oppgaven.
 
 ## Ukens ansatt! (13. desember 18.00)
 
@@ -309,7 +308,7 @@ Hviledag. Fra meldingen hintes det sterkt om at det finnes et ekstra flagg på C
 >
 >Ha en fin dag, alle betjenter. :)
 
-Hviledag (fortsatt).  Jeg tror ikke det var noe poeng å hente fra denne meldingen.
+Hviledag (fortsatt).
 
 ## Reinsdyr på villspor (14. desember 18.00)
 
@@ -339,13 +338,13 @@ Flagg: `pst{runforestrun}`
 >
 >📎 opptak.gif
 
-Navnet M. Nist viser til [MNIST-databasen](https://en.wikipedia.org/wiki/MNIST_database), som brukes til maskinlæring for tallgjenkjenning. Bokstavene `RØD` i teksten tolket jeg som at jeg skulle finne noe i røde lag i bildet. Bildet var en GIF med 110 bilder som jeg ekstraherte med ImageMagick. I rød kanal framkom i hvert bilde tall fra MNIST-databasen oppe til venstre og jeg oversatte til ASCII.
+Navnet M. Nist viser til [MNIST-databasen](https://en.wikipedia.org/wiki/MNIST_database), som brukes til maskinlæring for tallgjenkjenning. Bokstavene `RØD` i teksten tolket jeg som at jeg skulle finne noe i røde lag i bildet. Bildet var en GIF med 110 bilder som jeg ekstraherte med ImageMagick. I rød kanal framkom i hvert bilde tall fra MNIST-databasen oppe til venstre og jeg oversatte koden fra bildene til bokstaver fra ASCII-tabellen.
 
 Flagg: `PST{HerVarDetIkkeMyeÅSeGitt...}`
 
 >Takk for meldingen zigkill. Bra jobba!
 
-Denne oppgaven klarte jeg ikke uten hjelp. Jeg brukte mye tid på å forsøke fjerne grønt og blått fra bildet (med ImageMagick) og kanskje få et sett av stort sett transparente bilder som skulle kombineres, men det var et feilspor, og jeg fikk et hint om å bare se på fargekanelene. Det hadde jeg nok allerede gjort, men uten å legge merke til tegnet oppe til venstre i bilder som stort sett var støy i alle kanaler.
+Denne oppgaven klarte jeg ikke uten hjelp. Jeg brukte mye tid på å forsøke fjerne grønt og blått fra bildet (med ImageMagick) og kanskje få et sett av stort sett transparente bilder som skulle kombineres, eller noe slikt, men det var et feilspor, og jeg fikk et hint om å bare se på fargekanelene. Det hadde jeg nok allerede gjort, men uten å legge merke til tegnet oppe til venstre i bilder som stort sett var støy i alle kanaler.
 
 ## Ødelagt julesang (16. desember 18.00)
 
@@ -357,7 +356,7 @@ Denne oppgaven klarte jeg ikke uten hjelp. Jeg brukte mye tid på å forsøke fj
 >
 >Mellomleder
 
-I meldingen er det et hint om spekter. Jeg åpnet filen i [Audacity](https://www.audacityteam.org/) og med visning av spektrogram og tilstrekkelig zoom kan flagget leses ut i den delen av filen der det er støy.
+I meldingen var det et hint om spekter. Jeg åpnet filen i [Audacity](https://www.audacityteam.org/) og med visning av spektrogram og tilstrekkelig zoom kunne flagget leses ut i den delen av filen der det var støy.
 
 Flagg: `PST{H4KKIPL4PL4T4}`
 
@@ -377,7 +376,7 @@ Selv om oppgaven var ganske enkel, var det bare flaks at jeg så teksten i spekt
 >
 >📎trasé.txt
 
-Meldingen inneholder `HERSCHELGRAPH` i store bokstaver. Tekstfilen inneholdt koordinater som jeg plottet i Google Maps og fant at hvert punkt lå i en by, 11 stykker totalt.
+Meldingen inneholdt `HERSCHELGRAPH` i store bokstaver. Tekstfilen inneholdt koordinater som jeg plottet i Google Maps og fant at hvert punkt lå i en by, 11 stykker totalt.
 
 Oppgaven var åpenbart krevende, og det kom en oppdatering dagen etter:
 
@@ -403,7 +402,7 @@ Flagg: `PST{SKYRIVAL}`
 
 >Takk zigkill! Sky rival, det er smart. Ingen grunn til å legge trasén forbi Sydpolen.
 
-Denne oppgaven klarte jeg ikke på egenhånd, og jeg løste den først etter hint fra to andre deltakere, og det var først det siste hintet om at forbokstavene på byene skulle danne svaret som gjorde at jeg klarte å komme fram til det. Jeg vet ikke hva poenget med Herschel-graf er og hintet fra dagen etter, hvor byene delvis er gjengitt feil, forsto jeg heller ikke poenget med.
+Denne oppgaven klarte jeg ikke på egenhånd, og jeg løste den først etter hint fra to andre deltakere, og det var først det siste hintet om at forbokstavene på byene skulle danne svaret (noe jeg hadde forsøkt å få til, også med ROT-*n*) som gjorde at jeg klarte å komme fram til det. Jeg vet ikke hva poenget med Herschel-graf er i denne oppgaven og hintet fra dagen etter, hvor byene delvis er gjengitt feil, forsto jeg heller ikke poenget med.
 
 ## Grønne firkanter (18. desember 18.00)
 
@@ -421,7 +420,7 @@ Denne oppgaven klarte jeg ikke på egenhånd, og jeg løste den først etter hin
 >
 >Mellomleder
 
-zip-filen inneholdt et git-repo og på profilen til (underleder)[https://github.com/underleder], som er den som har commitet alle versjonene, var det et hint (teksten «HINT HINT») i den grafiske framstillingen av bidrag.
+zip-filen inneholdt et git-repo og på profilen til [underleder](https://github.com/underleder), som var den som hadde commitet alle versjonene, var det et hint (teksten «HINT HINT») i den grafiske framstillingen av bidrag.
 
 ![underleders profil](/assets/images/npst-2021/underleder.png)
 
@@ -433,7 +432,7 @@ Flagg: `pst{get_clean_go_green!}`
 >
 >Mellomleder
 
-Denne oppgaven tok masse tid, da jeg løste også denne for hånd. Det var også litt tilfeldig at jeg oppdaget at commit-ene i repoet var samlet på datoer, men til samme tid hver dag.
+Denne oppgaven tok masse tid, da jeg løste også denne *for hånd*. Det var også litt tilfeldig at jeg oppdaget at commit-ene i repoet var samlet på datoer, men til samme tid hver dag.
 
 ## ChimneyChopper (19. desember 2021)
 
@@ -450,29 +449,32 @@ Denne oppgaven tok masse tid, da jeg løste også denne for hånd. Det var også
 Den vesentlige delen av koden var disse linjene fra Chopper (server):
 
 ```
-        try {
-            
-                $Encrypted_Flag = "76492d..."
-
-                $key = [byte[]]($addressLookup[0..15] -join "").ToCharArray()
-                $ss = ConvertTo-SecureString -String $Encrypted_Flag -Key $key
-                $way = [System.Runtime.InteropServices.Marshal]::SecureStringToGlobalAllocUnicode($ss)
-                $decoded = [System.Runtime.InteropServices.Marshal]::PtrToStringUni($way)
-                Write-Host "Korrekt adresse funnet! Deploy julegaver " -ForegroundColor Magenta
-                Write-Host $decoded -ForegroundColor Yellow
-            
-        }
+try {
+    $Encrypted_Flag = "76492d..."
+    $key = [byte[]]($addressLookup[0..15] -join "").ToCharArray()
+    $ss = ConvertTo-SecureString \
+        -String $Encrypted_Flag \
+        -Key $key
+    $way = [System.Runtime.InteropServices.Marshal]::SecureStringToGlobalAllocUnicode($ss)
+    $decoded = [System.Runtime.InteropServices.Marshal]::PtrToStringUni($way)
+    Write-Host "Korrekt adresse funnet! Deploy julegaver " \
+        -ForegroundColor Magenta
+    Write-Host $decoded \
+        -ForegroundColor Yellow
+}
 ```
 
 Jeg endret først en test i klienten slik at skriptet ikke avsluttet og deretter la jeg inn en loop i server som testet alle muligheter (tall) i addressLookup i stedet for den adressen (pid) som ble sendt fra klient:
 ```
-        $i = 0
-        while($i -lt 65536) {
-            $i++
-            $Loadstring = "$i"
-            $addressLookup = (Get-FileHash -InputStream ([IO.MemoryStream]::new([byte[]][char[]]$Loadstring)) -Algorithm SHA384).hash
-            try {
-        
+$i = 0
+while($i -lt 65536) {
+    $i++
+    $Loadstring = "$i"
+    $addressLookup = \
+    (Get-FileHash \
+        -InputStream ([IO.MemoryStream]::new([byte[]][char[]]$Loadstring)) \
+        -Algorithm SHA384).hash
+    try {
 ```
 
 Flagget ble da skrevet ut.
@@ -511,7 +513,7 @@ I den første kjøringen av server og klient kom det en feilmelding (som står k
 >
 >Mellomleder
 
-Hviledag. Det ble varslet på Discord om at noen hadde satt opp en cryptobins-klone for å fiske flagg. Jeg har sett på noen av løsningene som har blitt postet, men tror ikke jeg har vært utsatt for dette.
+Hviledag. Det ble varslet på Discord om at noen hadde satt opp en [Cryptobin](https://cryptobin.co/)-klone for å fiske flagg. Jeg har sett på noen av løsningene som har blitt postet på Cryptobin, men tror ikke jeg har vært utsatt for dette.
 
 ## Ukens ansatt! (20. desember 18.00)
 
@@ -525,7 +527,7 @@ Hviledag. Det ble varslet på Discord om at noen hadde satt opp en cryptobins-kl
 >
 >HR
 
-Hviledag (fortsatt). Røllik er den som varslet om jukset og det er antakelig en bevisst gest av Julenissen å gi en oppmerksomhet om dette.
+Hviledag (fortsatt). Røllik var den som varslet om jukset og det var antakelig en bevisst gest av Julenissen å gi en oppmerksomhet om dette.
 
 ## Mulig lekkasje (21. desember 18.00)
 
@@ -535,7 +537,7 @@ Hviledag (fortsatt). Røllik er den som varslet om jukset og det er antakelig en
 >
 >brev.txt
 
-Vedlegget `brev.txt` inneholder `NULLBREDDETEGN` med store bokstaver. Filen inneholdt to tegn med null bredde og ved å sette disse til 0 og 1 fikk jeg ut binærkode som konvertert til ASCII ga flagget.
+Vedlegget `brev.txt` inneholdt `NULLBREDDETEGN` med store bokstaver. Filen inneholdt to tegn med null bredde og ved å sette disse til 0 og 1 fikk jeg ut binærkode som konvertert til bokstaver fra ASCII-tabellen ga flagget.
 
 Flagg: `PST{ReadingBetweenTheLetters}`
 
@@ -554,6 +556,8 @@ Flagg: `PST{ReadingBetweenTheLetters}`
 >📎aktivitet_pingvin.kml 📎klokke_7_18_12_21.kml
 
 Jeg lastet opp KML-filene til Google Maps og så at sporene sammenfalt omtrent ved frølageret på Svalbard. På Instagram fant jeg profilen @chilliwilly1234 og der var flagget i profilbeskrivelsen.
+
+![chilliwilly1234](/assets/images/npst-2021/chilliwilly1234.png)
 
 Flagg: `pst{utpaaturaldrisur123}`
 
@@ -575,7 +579,25 @@ Det tok litt tid å finne Instagramprofilen, men jeg overså først flagget og h
 >
 >Hoho, Julenissen
 
-Jeg brukte binwalk til å ekstrahere filer fra png-filen og i filen `snille_og_slemme.pdf` la jeg merke til at kun én av de som var snille og ansatt i NPST *ikke* hadde mottatt gave i 2020.
+Jeg brukte binwalk til å ekstrahere filer fra png-filen. En av filene var `note_to_elf.txt` som inneholdt hint.
+
+>En alvebetjent kom innom kontoret nettopp, og delte sin hypotese om hvem
+som kan stå bak de uheldige hendelsene denne førjulstiden. Jeg skriver det ned
+slik at jeg husker det til senere, for nå må jeg straks løpe for å rekke
+lunsjgrøten. Alvebetjenten tror at den skyldige har et navn på M, fordi
+vedkommende kaller seg for "M". Videre mente alvebetjenten at den skyldige må
+være ansatt i NPST, av flere grunner. Først og fremst fordi vedkommende lekket
+konfidensiell informasjon om pakkefordelingsruta tidlig i desember. Men også
+fordi vedkommende kommuniserte med SPST fra vår stue.
+>
+>Spørsmålet er da hvorfor en NPST-ansatt vil snu ryggen til julen og samarbeide
+med SPST. Alle NPST-ansatte er "snille", og ikke "slemme". Hvis en alv skulle
+hoppe over til "slem"-listen, så mister alven umiddelbart alvtorisasjonen og
+dermed også jobben. Så hva kan være grunnen til at en "snill" alvebetjent ønsker
+å sabotere årets julegavedistribusjon?
+Det klarte ingen av oss å svare på.
+
+I filen `snille_og_slemme.pdf` la jeg merke til at kun én av de som var snille og ansatt i NPST som *ikke* hadde mottatt gave i 2020.
 
 Flagg: `PST{Maximilian}`
 
@@ -599,11 +621,13 @@ Flagg: `PST{Maximilian}`
 >
 >Mvh Mellomleder
 
-Jeg løste ikke denne oppgaven og vet ikke hvor jeg skal begynne.
+Jeg løste ikke denne oppgaven og vet fortsatt ikke hvor jeg skal begynne.
 
 ## Egg
 
-Det var klart fra poenggivningen at det antakelig kom flagg 10. desember (noen fikk et ekstra poeng i tillegg til de ti poengene som hver oppgave ga), 12. desember (noen hadde to poeng), 14. desember (Cybertalent-lenken), 16. desember (noen hadde nå fire poeng) og 23. desember (kom over flagget selv). Det er ingen som per 25. desember har flere enn fem ekstrapoeng, så jeg antar at det ikke er flere flagg.
+Det var klart fra poenggivningen at det antakelig kom flagg 10. desember (noen fikk et ekstra poeng i tillegg til de ti poengene som hver oppgave ga), 12. desember (noen hadde to poeng), 14. desember (Cybertalent-lenken), 16. desember (noen hadde nå fire poeng) og 23. desember (hvor jeg kom over flagget selv). Det er ingen som per 25. desember har flere enn fem ekstrapoeng, så jeg antar at det ikke er flere flagg.
+
+### Første egg
 
 I oppgaven for 23. desember så jeg at en av filene som ble ekstrahert, `julekort.png`, hadde en kode i B0: `PST{Egg_`. Jeg ekstraherte data fra R0 («tikk takk tikk takk»), B0 («lang kort lang kort»), R1 («hvor peker klokka mon tro») og G1 («ikke tall men antall streker langs klokka»). Bildet viste to klokker som pekte på 15:05 og 16:06, og i rekkefølge ble det ut fra dataene 5-15-6-20.
 
@@ -613,6 +637,8 @@ Flagg: `PST{EGG_515620}`
 >
 >- Juleharen 🐣
 
+### Andre egg
+
 Jeg gikk tilbake til varelageret for å se etter andre flagg og oppdaget da at det i tillegg til logoen på websiden også ble lastet en fil med navn `Logo_egg.jpg`. Denne hadde jeg oversett, men den hadde flagget avbildet.
 
 Flagg: `PST{EGG_StRpiITbqyEsBJM}`
@@ -620,6 +646,8 @@ Flagg: `PST{EGG_StRpiITbqyEsBJM}`
 >Takk for at du fant egget mitt!
 >
 >- Juleharen 🐣
+
+### Øvrige egg
 
 På de øvrige flaggene hadde jeg ingenting, selv om jeg brukte ekstra tid på de dagene for å forsøke finne noe som pekte seg ut.
 
