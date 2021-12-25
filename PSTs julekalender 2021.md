@@ -418,7 +418,11 @@ Denne oppgaven klarte jeg ikke på egenhånd, og jeg løste den først etter hin
 >
 >Mellomleder
 
-zip-filen inneholdt et git-repo og på profilen til (underleder)[https://github.com/underleder], som er den som har commitet alle versjonene, var det et hint (teksten «HINT HINT») i den grafiske framstillingen av bidrag. Tilsvarende plottet commit-historikken i repoet flagget.
+zip-filen inneholdt et git-repo og på profilen til (underleder)[https://github.com/underleder], som er den som har commitet alle versjonene, var det et hint (teksten «HINT HINT») i den grafiske framstillingen av bidrag.
+
+![underleders profil](/assets/images/underleder.png)
+
+Tilsvarende plottet commit-historikken i repoet flagget.
 
 Flagg: `pst{get_clean_go_green!}`
 
