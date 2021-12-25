@@ -37,6 +37,7 @@ Flagg: `PST{HelloDASS}==`
 >Bra jobba zigkill! Mellomleder tar kontakt med deg i morgen med mer konkret informasjon angående hva du skal jobbe med.
 
 Jeg testet først å se på bit planes i RGB, deretter strings i ulike verktøy og det var litt tilfeldig at jeg fant flagget. En bedre tilnærming hadde vært å bruke zsteg.
+
     zsteg -a eksempel_bakgrunnsbilde.png | grep -i pst{
 
 ## Huskelapp (2. desember 18.00)
