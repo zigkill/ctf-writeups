@@ -254,19 +254,19 @@ Den første delen av oppgaven gikk ganske greit, men jeg brukte litt tid på å 
 >"- - - k r o e l l - - - - - - - - - - - - - - - - - - - - - - - k r o e l l - - - - - - - -"
 >```
 >og noen biter av klarteksten til melding 2:
->
+>```
 >"- - - - - - - - - - - - - - - - p e n g w y n - - a - - o l - n - - - - - - - - - - - - - -"
->
+>```
 >Kan du se om du klarer å finne resten av klarteksten til begge meldingene? Legger også ved en tabell over ascii-verdier, kanskje du får bruk for den.
 >
 >Melding 1:
->
+>```
 >00010101 00010100 00010011 00000000 00011101 00000011 00001010 00000010 00011100 00000011 00010101 00011001 00010111 00000001 00010001 00001001 00011111 00010010 00000100 00000000 00001001 00000111 00011010 00000000 00000001 00001110 00000000 00010101 00001011 00011111 00010000 00011000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
->
+>```
 >Melding 2:
->
+>```
 >00010110 00001100 00000110 00000111 00001000 00000101 00001101 00001011 00000011 00011000 00011110 00001110 00010110 00001001 00010111 00001101 00011100 00010101 00001111 00010101 00010010 00010111 00011010 00001010 00011110 00000100 00000110 00000111 00001010 00000000 00010000 00000100 00011000 00011001 00000110 00001011 00000010 00001001 00000010 00001000 00011111 00001010 00011100 00010011 00000000 00011101
->
+>```
 >📎 ascii.pdf
 
 Meldingsteksten inneholder OTP i store bokstaver, og jeg antok at det viste til [One-time pad](https://en.wikipedia.org/wiki/One-time_pad), som er sårbare dersom samme kode brukes flere ganger. Her skal det være mulig å benytte noe som heter Crib Drag (e.g., [denne](https://toolbox.lotusfa.com/crib_drag/)), men jeg løste den for hånd, noe som tok litt tid. Den første meldingen er `pstkroellparentesberlinerkranserkroellparentes` og den andre `skalgibeskjedfrapengwynomatsolenskinnerimorgen`.
@@ -612,6 +612,8 @@ Flagg: `PST{EGG_StRpiITbqyEsBJM}`
 >Takk for at du fant egget mitt!
 >
 >- Juleharen 🐣
+
+På de øvrige flaggene hadde jeg ingenting, selv om jeg brukte ekstra tid på de dagene for å forsøke finne noe som pekte seg ut.
 
 ## Hjelp
 
