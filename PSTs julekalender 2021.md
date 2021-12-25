@@ -28,9 +28,9 @@ Jeg tror ikke det var noe poeng å hente fra denne meldingen.
 >
 >📎eksempel_bakgrunnsbilde.png
 
-Jeg lastet opp bildet i (https://stegonline.georgeom.net/extract) og tok extract av RGB i Layer 0, der flagget lå.
+Jeg lastet opp bildet [her](https://stegonline.georgeom.net/extract) og tok extract av RGB i Layer 0, der flagget lå.
 
-==PST{HelloDASS}==
+Flagg: ==PST{HelloDASS}==
 
 >Bra jobba zigkill! Mellomleder tar kontakt med deg i morgen med mer konkret informasjon angående hva du skal jobbe med.
 
