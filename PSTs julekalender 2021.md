@@ -28,9 +28,9 @@ Jeg tror ikke det var noe poeng å hente fra denne meldingen.
 >
 >📎eksempel_bakgrunnsbilde.png
 
-![eksempel_bakgrunnsbilde.png](/assets/images/eksempel_bakgrunnsbilde.png)
+![eksempel_bakgrunnsbilde.png](/assets/images/npst-2021/eksempel_bakgrunnsbilde.png)
 
-Jeg lastet opp bildet [her](https://stegonline.georgeom.net/extract) og tok extract av RGB i Layer 0, der flagget lå.
+Jeg lastet opp bildet [på Stegonline](https://stegonline.georgeom.net/extract) og tok extract av RGB i Layer 0, der flagget lå.
 
 Flagg: `PST{HelloDASS}==`
 
@@ -67,6 +67,9 @@ Flagg: `PST{MANGE SNILLE BARN I VERDEN}`
 >📎 julekort_framsiden.jpg
 >
 >Mvh Mellomleder
+
+![julekort_baksiden.jpg](/assets/images/npst-2021/julekort_baksiden.jpg)
+![julekort_framsiden.jpg](/assets/images/npst-2021/julekort_framsiden.jpg)
 
 Begge sidene av julekortet inneholdt symboler som jeg fant ut kalles [Pigpen Cipher](https://en.wikipedia.org/wiki/Pigpen_cipher). Forsiden hadde fire symboler som stavet ut «PILA» mot klokken. Baksiden av kortet måtte snus opp ned for at cipheret skulle gi mening.
 
@@ -420,7 +423,7 @@ Denne oppgaven klarte jeg ikke på egenhånd, og jeg løste den først etter hin
 
 zip-filen inneholdt et git-repo og på profilen til (underleder)[https://github.com/underleder], som er den som har commitet alle versjonene, var det et hint (teksten «HINT HINT») i den grafiske framstillingen av bidrag.
 
-![underleders profil](/assets/images/underleder.png)
+![underleders profil](/assets/images/npst-2021/underleder.png)
 
 Tilsvarende plottet commit-historikken i repoet flagget.
 
