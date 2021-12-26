@@ -384,15 +384,25 @@ Oppgaven var åpenbart krevende, og det kom en oppdatering dagen etter:
 >Oppdatering angående gårsdagens Mail. En alvebetjent har funnet alle koordinatene på kartet og hentet ut de tilhørende byene. Kan dette være til hjelp?
 >
 >[-11.725769, -61.778000] = Rolim de moura
+>
 >[20.145221,-75.215909] = Guantanamo
+>
 >[52.300000,76.95000] = Pavlodar
+>
 >[23.101397,88.393575] = Ektapur
+>
 >[-34.417148,19.248128]} = Hermanus
+>
 >[-15.4825, 128.122778] = Wyndham
+>
 >[78.216667,15.633333] = Longerbyen
+>
 >[5.041066,7.919476] = Uyo
+>
 >[45.424722,-75.695000] = Ottawa
+>
 >[21.150000,79.083333] = Nagpu
+>
 >{[17.083333,-96.750000] = Oaxaca
 >
 >Mellomleder
