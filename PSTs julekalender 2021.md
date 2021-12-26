@@ -54,7 +54,7 @@ Jeg testet først å se på bit planes i RGB, deretter strings i ulike verktøy 
 >
 >📎huskelapp_til_2021.txt
 
-Huskelappen så ut til å inneholde koordinater, og jeg importerte disse på Google Maps. Punktene viste flagget direkte.
+Huskelappen så ut til å inneholde koordinatpar, og jeg importerte disse på Google Maps. Punktene viste flagget direkte.
 
 Flagg: `PST{MANGE SNILLE BARN I VERDEN}`
 
@@ -79,7 +79,7 @@ Flagg: `pst{julenissenerteit}`
 >Vel vel. Tilsynelatende ikke noe muffens her, så julekortet blir sendt videre til Antarktis.
 
 Jeg klarte ikke denne oppgaven helt uten hjelp. Jeg kom fram til cipheret, men skjønte ikke hintet fra forsiden og forsøkte forgjeves å finne en måte å ordne bokstavene på eller bruke varianter av cipheret som kunne gi mer mening.  
-En annen deltaker ga meg hint om at «noe må gjøres med tekstsiden» og det var tilstrekkelig. Det slo meg at en mottaker på Sydpolen ville lese kortet opp-ned.
+En annen deltaker ga meg hint om at «noe må gjøres med tekstsiden» og det var tilstrekkelig; det slo meg at en mottaker på Sydpolen ville lese kortet opp-ned.
 
 ## Krøll på verkstedet (4. desember 18.00)
 
@@ -131,7 +131,7 @@ Flagg: `PST{5Q1_1nj€Ⓒt10n}`
 >
 >Takk for godt samarbeid, vi ser frem til fortsettelsen.
 
-Hviledag.
+Hviledag. Gratulerer, Peter!
 
 ## Kryptert melding (7. desember 18.00)
 
@@ -178,6 +178,8 @@ Flagg: `pst{nootnoot}`
 >
 >Mellomleder
 
+![frimerke.png](/assets/images/npst-2021/frimerke.png)
+
 Bildet viste en snegle i en slede mot en bakgrunn av noe som liknet på Tetris-figurer.
 
 Jeg lastet opp bildet til Stegonline og fant informasjon i bitplanes Red 0 og Blue 0. Den første viste noe som så ut til å være en operasjon med data fra B0 med S8(«Frimerke\x00...»). I R0 var det kompilert s8-kode for [Slede8](https://slede8.p26e.dev/), som ble mye brukt i CTF-en i 2020, mens bitplane B0 viste deler av en QR-kode. Jeg kjørte s8-koden med hex for «Frimerke» som føde (input) og oppgulp (output) ble en hex-code. Fra B0 i bildet ekstraherte jeg data som input til CyberChef med oppskrift: XOR (output fra s8 som Hex)->Generate Image (Bits, 256 pixels per row)->Parse QR Code.
@@ -189,9 +191,7 @@ Flagg: `PST{R3m3mb3r_m3?_W3_h4d_SO_MUCH_FUN_t0g3th3r!_:D}`
 >Mellomleder
 
 Også på denne måtte jeg få hjelp en annen deltaker. Jeg trodde jeg skulle bruke bildene til å få fram en QR-kode som kanskje skulle sende meg videre til Slede 8, men jeg fikk hint om å se etter s8-koden og gå videre med den først. Dessuten rotet jeg mye med input og operasjoner i CyberChef og brukte blant annet feil data som input. Jeg trodde jeg kunne bruke View Bit Plane (Blue 0) på `frimerke.png`.
-Jeg brukte også mye tid på først å forsøke tolke s8-koden, i stedet for å bare legge den inn direkte. Dessuten fikk jeg problemer med kjøretiden og måtte øke antall sykler via `localStorage.setItem("🚲", <ønsket grense>)` (settes i console i browser).
-
-I 2020 ble Slede 8 brukt i stadig mer krevende oppgaver.
+Jeg brukte også mye tid på først å forsøke tolke s8-koden, i stedet for å bare kjøre den direkte. Dessuten fikk jeg problemer med kjøretiden og måtte øke antall sykler via `localStorage.setItem("🚲", <ønsket grense>)` (settes i console i browser).
 
 ## Nettverkstrafikk (9. desember 18.00)
 
@@ -203,7 +203,7 @@ I 2020 ble Slede 8 brukt i stadig mer krevende oppgaver.
 >
 >📎npst_02_12_21_18_00.pcap
 
-Jeg brukte Wireshark og tcpdump til å se på trafikken, som kun var TCP. De store bokstavene `TAP` viser til [Tap code](https://en.wikipedia.org/wiki/Tap_code) og payload i trafikken kunne dekodes. Her var det mange repeterende meldinger mellom parter, men en melding skilte seg ut, `PST{F'JEG SNACCER MED DEG FRA {SOURCEIP}'}`. Source på denne meldingen var `43.44.45.15`, som etter koden parser til `stue`.
+Jeg brukte Wireshark og tcpdump til å se på trafikken, som kun var TCP. De store bokstavene `TAP` viser til [Tap code](https://en.wikipedia.org/wiki/Tap_code) og payload i trafikken kunne dekodes. Her var det mange repeterende meldinger mellom parter, men en melding skilte seg ut, `PST{F'JEG SNACCER MED DEG FRA {SOURCEIP}'}`. Source på denne meldingen var `43.44.45.15`, som etter koden parset til `stue`.
 
 Flagg: `pst{jegsnakkermeddegfrastue}`
 
@@ -309,7 +309,7 @@ Hviledag. Fra meldingen hintes det sterkt om at det finnes et ekstra flagg på [
 >
 >Ha en fin dag, alle betjenter. :)
 
-Hviledag (fortsatt).
+Hviledag (fortsatt). Gratulerer, Carixo!
 
 ## Reinsdyr på villspor (14. desember 18.00)
 
@@ -528,7 +528,7 @@ Hviledag. Det ble varslet på Discord om at noen hadde satt opp en [Cryptobin](h
 >
 >HR
 
-Hviledag (fortsatt). Røllik var den som varslet om jukset og det var antakelig en bevisst gest av Julenissen å gi en oppmerksomhet om dette.
+Hviledag (fortsatt). Røllik var den som varslet om jukset og det var antakelig en bevisst gest av Julenissen å gi en oppmerksomhet om dette. Gratulerer!
 
 ## Mulig lekkasje (21. desember 18.00)
 
@@ -579,6 +579,8 @@ Det tok litt tid å finne Instagramprofilen, men jeg overså først flagget og h
 >📎 Julenissens_kontor.png
 >
 >Hoho, Julenissen
+
+![Julenissens kontor](/assets/images/npst-2021/Julenissens_kontor.png)
 
 Jeg brukte binwalk til å ekstrahere filer fra png-filen. En av filene var `note_to_elf.txt` som inneholdt hint.
 
@@ -651,12 +653,3 @@ Flagg: `PST{EGG_StRpiITbqyEsBJM}`
 ### Øvrige egg
 
 På de øvrige flaggene hadde jeg ingenting, selv om jeg brukte ekstra tid på oppgavene fra de dagene for å forsøke finne noe som pekte seg ut.
-
-## Hjelp
-
-Jeg klarte oppgavene 1., 2., 5., 7., 9., 10., 11., 12., 14., 16., 18., 19., 20., 21., 22. og 23. desember og eggene fra 10. og 23. desember uten hint fra andre. På noen av de andre oppgavene var jeg veldig nære løsningen på egenhånd (og hadde delvis rotet meg bort), mens jeg også på noen fikk gode hint som ledet meg til riktig løsning.
-
-## Oppsummering
-
-Dette er den fjerde CTF-en til PST jeg har forsøkt meg på. I hovedsak er oppgavene underholdende og passe vanskelige. I noen tilfeller er det litt vanskelig å finne riktig tilnærming og det er lett å gå seg bort i irrelevant informasjon.  
-Det var litt overraskende at Slede 8 ikke ble brukt mer når den først ble reintrodusert. Varelageroppgavene trodde jeg også det ville komme flere av, og de to som var, var ganske like.
