@@ -265,7 +265,8 @@ Den første delen av oppgaven gikk ganske greit, men jeg brukte litt tid på å 
 >
 >Melding 1:
 >```
->00010101 00010100 00010011 00000000 00011101 00000011 00001010 00000010 ...
+>00010101 00010100 00010011 00000000 00011101 00000011 00001010 00000010 ...  
+>934893458
 >```
 >Melding 2:
 >```
@@ -383,8 +384,7 @@ Oppgaven var åpenbart krevende, og det kom en oppdatering dagen etter:
 
 >Oppdatering angående gårsdagens Mail. En alvebetjent har funnet alle koordinatene på kartet og hentet ut de tilhørende byene. Kan dette være til hjelp?
 >
->[-11.725769, -61.778000] = Rolim de moura
->
+>[-11.725769, -61.778000] = Rolim de moura  
 >[20.145221,-75.215909] = Guantanamo  
 >[52.300000,76.95000] = Pavlodar  
 >[23.101397,88.393575] = Ektapur  
