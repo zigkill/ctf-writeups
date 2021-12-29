@@ -634,7 +634,33 @@ Flagg: `PST{Maximilian}`
 >
 >Mvh Mellomleder
 
-Jeg løste ikke denne oppgaven og vet fortsatt ikke hvor jeg skal begynne.
+Jeg løste ikke denne oppgaven. Verktøyet var blitt lagt ut i DASS, men uten at jeg oppdaget det før flere dager senere.
+
+## Takk for innsatsen (24. desember 17.00)
+
+>God julekveld, alvebetjent zigkill!
+>
+>Jeg vil takke deg for innsatsen din, og for at du har stått på kveld etter kveld for å få arbeidet vårt trygt i havn!
+>
+>Heldigvis klarte vi det akkurat denne gangen også. I år skal alle snille barn få julegavene sine!
+>
+>Med ønske om en fredelig jul,
+>
+>Julenissen 🎁
+
+## Årets alvebetjent (29. desember 18.00)
+
+>Kjære alle sammen,
+>
+>årets alvebetjent er kåret, og vi kan med glede fortelle at det er UnblvR! Våre alvebetjenter kjenner nok navnet, dette er alven som har løst oppgavene kjappest 9 av 21 ganger, og funnet alle fem 🥚 (to av dem også kjappest).
+>
+>Vedkommende er en dyktig alvebetjent, og vi setter pris på det gode arbeidet som har vært utført.
+>
+>UnblvR vil bli kontaktet av oss personlig for å motta en påskjønnelse! 🎁
+>
+>Vi ønsker dermed alle sammen fortsatt god jul, godt nyttår, og hjertelig velkommen tilbake neste gang!
+>
+>Vennlig hilsen, HR
 
 ## Egg
 
